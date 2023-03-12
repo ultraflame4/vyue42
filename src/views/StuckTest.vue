@@ -4,11 +4,11 @@
 
   <p v-for="i in 30">hey!</p>
   <div class="AmIStickied" id="stuck1" v-stuck>
-    Am I Stickied? (Top 100px)
+    Am I Stickied? (Top 5rem)
   </div>
   <p v-for="i in 30">hey2!</p>
   <div class="AmIStickied" id="stuck2" v-stuck>
-    Am I Stickied? (Bottom 100px)
+    Am I Stickied? (Bottom 300px)
   </div>
   <p v-for="i in 30">hey!</p>
 </div>

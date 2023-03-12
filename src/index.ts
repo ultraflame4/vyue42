@@ -19,11 +19,10 @@ const plugin ={
             const bottom = formatVal(style.bottom)
             const left = formatVal(style.left)
             const right = formatVal(style.right)
-            console.log(`${top} ${right} ${bottom} ${left}`)
+
             const observer = new IntersectionObserver(entries => {
-                console.log(entries[0])
                 if (!entries[0].isIntersecting){
-                    console.log("Stickied!",entries[0].intersectionRatio)
+
                     el.setAttribute("stuck","")
                 }
                 else {
