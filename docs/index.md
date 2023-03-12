@@ -8,11 +8,11 @@ hero:
   tagline: Its really useful... atleast for me.
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Get Started
+      link: /get-started
     - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Features
+      link: /features/
 
 features:
   - title: Awesome Directives

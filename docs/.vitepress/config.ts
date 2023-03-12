@@ -4,7 +4,7 @@ import {defineConfig} from 'vitepress'
 export default defineConfig({
     title: "vyue42",
     description: "A collection of useful things for Vue.js",
-    base:"/vyue42/",
+    base: "/vyue42/",
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         nav: [
@@ -14,13 +14,19 @@ export default defineConfig({
 
         sidebar: [
             {
+                text: "Getting Started",
+                items: [
+                    {text: "Installation", link: "/installation"},
+                ]
+            },
+            {
                 text: "Features",
                 link: "/features/index",
-                items:[
+                items: [
                     {
                         text: "Directives",
-                        items:[
-                            {text:"v-stuck",link:"/features/v-stuck"}
+                        items: [
+                            {text: "v-stuck", link: "/features/v-stuck"}
                         ]
                     }
                 ]

@@ -3,7 +3,7 @@ import toPx from "to-px";
 
 export {default as TestComponent} from "./components/TestComponent.vue"
 
-const plugin ={
+export const vyue42 ={
     install: (app:App)=>{
         app.directive('stuck',(el:HTMLElement, binding) => {
             const style = window.getComputedStyle(el)
@@ -39,4 +39,4 @@ const plugin ={
     }
 }
 
-export default plugin
+
