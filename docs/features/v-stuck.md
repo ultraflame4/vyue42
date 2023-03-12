@@ -10,6 +10,7 @@ The element it is attached to needs to be already sticky.
 See the example for more details.
 
 ## Example
-[Live demo](/src/examples/directives/stuck)
+<a href="/examples/directives/stuck" target="_blank" rel="noreferrer">Live demo</a>
+
 
 <<< @/../src/views/StuckTest.vue
