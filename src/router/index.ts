@@ -4,7 +4,7 @@ import Test from "@/views/Test.vue";
 import StuckTest from "@/views/StuckTest.vue";
 
 const router = createRouter({
-  history: createWebHashHistory(import.meta.env.BASE_URL),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/examples',
