@@ -1,6 +1,6 @@
 {
   "name": "vyue42",
-  "version": "0.0.0-dev.1",
+  "version": "0.0.0-dev.2",
   "private": false,
   "description": "A collection of vue components designed for myself that i find useful.",
   "repository": {
@@ -36,5 +36,8 @@
     "vue-router": "^4.1.6",
     "sass": "^1.59.2",
     "vite-plugin-dts": "^2.1.0"
-  }
+  },
+  "files": [
+    "lib"
+  ]
 }
