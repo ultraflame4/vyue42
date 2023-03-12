@@ -17,6 +17,7 @@ export default defineConfig({
                 text: "Getting Started",
                 items: [
                     {text: "Installation", link: "/installation"},
+                    {text: "Quick Start", link: "/quickstart"},
                 ]
             },
             {

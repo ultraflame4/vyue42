@@ -6,28 +6,33 @@ All instructions and code in this documentation will be in **typescript**.
 <br>
 
 # Installation
+Make sure you have installed and [Vue.js](https://vuejs.org/guide/introduction.html) is set up.
 
-To get started, install this library with
+To get started, install this library with:
 
 ```shell
 npm i vyue42
 ```
+## Context
+Your vue app should have a main.ts file where you have your createApp.
 
+It should look something like this:
+```ts
+import {createApp} from 'vue'
 
+const app = createApp(App)
+app.mount('#yourRootContainer');
+...
+```
 
 ## Default Styles
 Components in this library comes with default styles. <br>
 However they have to be imported manually due to limitations.
 
-In the vue setup file (where your create app is.)
+Add this to your imports to import the default styles. 
 
 ```ts
-import {createApp} from 'vue'
-import "vyue42/lib/index.css" // Import default component styles 
-
-createApp(App)
-    .mount('#yourRootContainer')
-
+import "vyue42/lib/index.css" // Import default component styles
 ```
 
 ## Using directives
@@ -35,31 +40,19 @@ This library comes with a set of vue directives. <br>
 To use them, we will have to register them with vue. 
 
 
-In the vue setup file (where your create app is.)
-
 ```ts
-import {createApp} from 'vue'
-import "vyue42/lib/index.css" // Import default component styles 
 import {vyue42} from "vyue42"; // import the plugin
-
-createApp(App)
-    .use(vyue42) // use the plugin
-    .mount('#yourRootContainer')
-
+app.use(vyue42) // use the plugin
 ```
 
-
-
-# Quick Start
-After installation this is what you need to setup the library
-
+## Finally
+At the end, your create app / main.ts file should look something like this:
 ```ts
 import {createApp} from 'vue'
 import "vyue42/lib/index.css" // Import default component styles 
-import {vyue42} from "vyue42"; // import the plugin
+import {vyue42} from "vyue42"; // Import the plugin
 
-createApp(App)
-    .use(vyue42) // use the plugin
-    .mount('#yourRootContainer')
-
+const app = createApp(App)
+app.use(vyue42) // use the plugin
+app.mount('#yourRootContainer')
 ```
