@@ -2,6 +2,10 @@
   "name": "vyue42",
   "version": "0.0.0",
   "private": false,
+  "main": "lib/vyue42.umd.js",
+  "module": "lib/vyue42.es.js",
+  "types": "lib/index.d.ts",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check build-only",

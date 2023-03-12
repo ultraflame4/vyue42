@@ -11,6 +11,7 @@ export default defineConfig({
         dts({
             include: ['src/components',"src/index.ts"],
             skipDiagnostics: false,
+
         })
     ],
     resolve: {
@@ -21,7 +22,9 @@ export default defineConfig({
     build: {
         lib: {
             entry: path.resolve(__dirname, "src/index.ts"),
-            name: "vyue42"
+            formats: ['es', 'umd'],
+            name: "vyue42",
+            fileName: (f)=>`vyue42.${f}.js`
         },
         outDir: "./lib",
         cssCodeSplit: true,
