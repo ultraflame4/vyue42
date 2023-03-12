@@ -1,11 +1,13 @@
 {
   "name": "vyue42",
-  "version": "0.0.0-dev.3",
+  "version": "0.0.0-dev.4",
   "private": false,
   "description": "A collection of vue components designed for myself that i find useful.",
+  "homepage": "https://ultraflam4.github.io/vyue42/",
   "repository": {
     "type": "git",
     "url": "https://github.com/ultraflame4/vyue42.git"
+
   },
   "author": {
     "url": "ultraflam4.github.io",
