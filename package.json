@@ -1,7 +1,16 @@
 {
   "name": "vyue42",
-  "version": "0.0.0",
+  "version": "0.0.0-alpha.0",
   "private": false,
+  "description": "A collection of vue components designed for myself that i find useful.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ultraflame4/vyue42.git"
+  },
+  "author": {
+    "url": "ultraflam4.github.io",
+    "name": "ultr42"
+  },
   "main": "lib/vyue42.umd.js",
   "module": "lib/vyue42.es.js",
   "types": "lib/index.d.ts",
