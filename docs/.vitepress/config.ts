@@ -4,6 +4,7 @@ import {defineConfig} from 'vitepress'
 export default defineConfig({
     title: "vyue42",
     description: "A collection of useful things for Vue.js",
+    base:"/docs/",
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         nav: [
