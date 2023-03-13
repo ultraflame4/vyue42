@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="container">
   <h1>Hello world!</h1>
 
   <p v-for="i in 30">hey!</p>
@@ -16,10 +16,17 @@
 
 <script lang="ts" setup>
 
-import TestComponent from "@/components/TestComponent.vue";
+
 </script>
 
 <style lang="scss" scoped>
+
+.container{
+  height: 90vh;
+  overflow: auto;
+  min-height: 0;
+}
+
 #stuck1{
   top: 5rem;
 }

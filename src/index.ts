@@ -1,5 +1,6 @@
 import type {App} from "vue";
 import toPx from "to-px";
+import {GetScrollParent} from "@/tools";
 
 export {default as TestComponent} from "./components/TestComponent.vue"
 
@@ -30,6 +31,7 @@ export const vyue42 ={
                 }
             },{
                 threshold:[1],
+                root: GetScrollParent(el),
                 rootMargin: `${top} ${right} ${bottom} ${left}`
             })
 
