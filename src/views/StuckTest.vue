@@ -23,6 +23,7 @@
 
 .container{
   height: 90vh;
+  border: 6px solid black;
   overflow: auto;
   min-height: 0;
 }
