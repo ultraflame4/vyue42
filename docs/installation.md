@@ -13,6 +13,16 @@ To get started, install this library with:
 ```shell
 npm i vyue42
 ```
+
+To install a specific version:
+```shell
+npm i vyue42@version
+```
+**Example**
+```shell
+npm i vyue42@0.0.0-dev.10
+```
+
 ## Context
 Your vue app should have a main.ts file where you have your createApp.
 
@@ -22,7 +32,7 @@ import {createApp} from 'vue'
 
 const app = createApp(App)
 app.mount('#yourRootContainer');
-...
+// ...
 ```
 
 ## Default Styles
@@ -45,7 +55,7 @@ import {vyue42} from "vyue42"; // import the plugin
 app.use(vyue42) // use the plugin
 ```
 
-## Finally
+## The End
 At the end, your create app / main.ts file should look something like this:
 ```ts
 import {createApp} from 'vue'
