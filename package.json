@@ -7,8 +7,8 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/ultraflame4/vyue42.git"
-
   },
+  "license": "MIT",
   "author": {
     "url": "ultraflam4.github.io",
     "name": "ultr42"
