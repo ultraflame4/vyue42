@@ -23,7 +23,6 @@ export const vyue42 ={
 
             const observer = new IntersectionObserver(entries => {
                 if (!entries[0].isIntersecting){
-
                     el.setAttribute("stuck","")
                 }
                 else {
@@ -34,7 +33,7 @@ export const vyue42 ={
                 root: GetScrollParent(el),
                 rootMargin: `${top} ${right} ${bottom} ${left}`
             })
-
+            el.removeAttribute("stuck")
             observer.observe(el)
 
         })
