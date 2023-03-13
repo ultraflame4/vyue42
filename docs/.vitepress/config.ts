@@ -36,6 +36,10 @@ export default defineConfig({
 
         socialLinks: [
             {icon: 'github', link: 'https://github.com/ultraflame4/vyue42'}
-        ]
+        ],
+        footer:{
+            message:'Released under the <a href="https://github.com/ultraflame4/vyue42/blob/main/LICENSE">MIT License.<a/>',
+            copyright:"Copyright © 2023 ultr42 | Created by <a href='https://ultraflame4.github.io'>ultraflame4<a/>"
+        }
     }
 })
