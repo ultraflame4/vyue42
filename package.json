@@ -47,5 +47,6 @@
   },
   "files": [
     "lib"
-  ]
+  ],
+  "web-types": "./web-types.json"
 }

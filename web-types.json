@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JetBrains/web-types/master/v2-preview/web-types.json",
+  "name": "vyue42",
+  "framework": "vue",
+  "version": "1.0.0",
+  "contributions": {
+    "html": {
+      "vue-directives": [
+        {
+          "name": "stuck",
+          "description": "Adds stuck attribute to the element when element has position sticky and is stuck/stickied",
+          "doc-url": "https://ultr42.live/vyue42/features/v-stuck",
+          "attribute-value": {
+            "required": false
+          }
+        }
+      ]
+    }
+  }
+}
