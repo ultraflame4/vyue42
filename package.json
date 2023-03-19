@@ -1,6 +1,6 @@
 {
   "name": "vyue42",
-  "version": "0.0.0-dev.10",
+  "version": "0.0.0-dev.11",
   "private": false,
   "description": "A collection of vue components designed for myself that i find useful.",
   "homepage": "https://ultraflam4.github.io/vyue42/",
@@ -46,7 +46,8 @@
     "vue-tsc": "^1.2.0"
   },
   "files": [
-    "lib"
+    "lib",
+    "web-types.json"
   ],
   "web-types": "./web-types.json"
 }
