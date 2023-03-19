@@ -1,8 +1,8 @@
-import type {Directive} from "vue";
+import type {Directive, Ref} from "vue";
 import toPx from "to-px";
 import {GetScrollParent} from "@/tools";
 
-export const vstuck: Directive<HTMLElement,string> = (el:HTMLElement, binding) => {
+export const vstuck: Directive<HTMLElement,{stuck:boolean}> = (el:HTMLElement, binding) => {
     const style = window.getComputedStyle(el)
 
     function formatVal(n: string) {
@@ -18,11 +18,17 @@ export const vstuck: Directive<HTMLElement,string> = (el:HTMLElement, binding) =
     const right = formatVal(style.right)
 
     const observer = new IntersectionObserver(entries => {
-        if (!entries[0].isIntersecting){
-            el.setAttribute("stuck","")
+        let isIntersecting = entries[0].isIntersecting
+        console.log(binding)
+        if (binding.value) {
+            console.log("Tets")
+            binding.value.stuck=!isIntersecting
+        }
+        if (!isIntersecting){
+            el.setAttribute("stuck","");
         }
         else {
-            el.removeAttribute("stuck")
+            el.removeAttribute("stuck");
         }
     },{
         threshold:[1],

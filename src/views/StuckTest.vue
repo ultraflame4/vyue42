@@ -3,8 +3,8 @@
   <h1>Hello world!</h1>
 
   <p v-for="i in 30">hey!</p>
-  <div class="AmIStickied" id="stuck1" v-stuck>
-    Am I Stickied? (Top 5rem)
+  <div class="AmIStickied" id="stuck1" v-stuck="topStickied">
+    Am I Stickied? (Top 5rem) {{topStickied}}
   </div>
   <p v-for="i in 30">hey2!</p>
   <div class="AmIStickied" id="stuck2" v-stuck>
@@ -16,6 +16,9 @@
 
 <script lang="ts" setup>
 
+import {ref} from "vue";
+
+const topStickied = ref({stuck:false})
 
 </script>
 
