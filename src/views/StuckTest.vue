@@ -22,7 +22,7 @@ const topStickied = ref({stuck:false})
 
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 .container{
   height: 90vh;
