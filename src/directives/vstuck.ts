@@ -19,9 +19,8 @@ export const vstuck: Directive<HTMLElement,{stuck:boolean}> = (el:HTMLElement, b
 
     const observer = new IntersectionObserver(entries => {
         let isIntersecting = entries[0].isIntersecting
-        console.log(binding)
+
         if (binding.value) {
-            console.log("Tets")
             binding.value.stuck=!isIntersecting
         }
         if (!isIntersecting){
