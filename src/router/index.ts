@@ -12,14 +12,14 @@ const router = createRouter({
         {
           path: 'components',
           children:[
-            {path:"test",component:Test}
+            {path:"test",component:Test, name:"Test Component"},
           ]
         },
 
         {
           path: 'directives',
           children:[
-            {path: "stuck",component: StuckTest}
+            {path: "stuck",component: StuckTest, name: "V Stuck Test"}
           ]
         }
       ]
