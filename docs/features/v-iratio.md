@@ -84,4 +84,5 @@ These are the following attributes / options for IRatioOptions
 
 ## Advanced Example
 [Live Demo](https://stackblitz.com/edit/examples-vyue42-viratio?file=src/App.vue)
+
 <<< @/../src/views/ScrollRatioTest.vue
