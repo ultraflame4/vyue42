@@ -12,8 +12,17 @@
           "doc-url": "https://ultr42.live/vyue42/features/v-stuck",
           "required": false,
           "attribute-value": {
-            "type": "object",
             "required": false,
+            "kind": "expression"
+          }
+        },
+        {
+          "name": "iratio",
+          "description": "Intersection Ratio",
+          "doc-url": "https://ultr42.live/vyue42/features/v-stuck",
+          "required": false,
+          "attribute-value": {
+            "required": true,
             "kind": "expression"
           }
         }
