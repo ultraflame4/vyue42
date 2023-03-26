@@ -83,5 +83,5 @@ These are the following attributes / options for IRatioOptions
 | thresholds | Array\<number> OR number | The thresholds before the ratios are updated and the callbacks are called.<br/> See <a href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#threshold"> here </a> for more info | false    | [0.00,0.01,...,0.99,1] |
 
 ## Advanced Example
-
+[Live Demo](https://stackblitz.com/edit/examples-vyue42-viratio?file=src/App.vue)
 <<< @/../src/views/ScrollRatioTest.vue
