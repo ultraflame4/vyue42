@@ -7,6 +7,10 @@ export function GetScrollParent(node:HTMLElement|null):HTMLElement|null {
         return null;
     }
 
+    if (node.parentElement===null) {
+        return null
+    }
+
     if (node.scrollHeight > node.clientHeight) {
         return node;
     } else {
