@@ -28,7 +28,8 @@ export default defineConfig({
                     {
                         text: "Directives",
                         items: [
-                            {text: "v-stuck", link: "/features/v-stuck"}
+                            {text: "v-stuck", link: "/features/v-stuck"},
+                            {text: "v-iratio", link: "/features/v-iratio"}
                         ]
                     }
                 ]
