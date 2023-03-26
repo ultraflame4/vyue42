@@ -19,7 +19,7 @@
         {
           "name": "iratio",
           "description": "Intersection Ratio",
-          "doc-url": "https://ultr42.live/vyue42/features/v-stuck",
+          "doc-url": "https://ultr42.live/vyue42/features/v-iratio",
           "required": false,
           "attribute-value": {
             "required": true,
