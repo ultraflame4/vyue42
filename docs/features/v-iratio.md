@@ -4,38 +4,62 @@ This directive allows you to easily create scroll animations or lazy loaded reso
 
 ## Basic Usage
 
-::: tip
-The example below is **really really** basic, as is intended to show you how it is used. <br/>
-See [Advanced Example](#Advanced-Example) for a better idea of what can be done.
-:::
+To start off, we need to create an iRatioObject.
 
-A very basic example that only shows how to set it up.
+```ts
+import {iRatioObject} from "fix this later";
+
+const iratio = new iRatioObject({
+    exit: false,
+    invert: true
+})
+```
+
+The object will be used to:
+
+1. [Configure the iratio directive](#configuring-iratio)
+2. [Pass data back for us to use](#using-data-from-iratioobject).
+
+We then assign the object to the directive like so:
+
 ```vue
 
 <template>
-  <div v-iratio="iratioRef">
+  <div v-iratio="iratio">
     Hello World
   </div>
 </template>
 
 <script lang="ts" setup>
-import {ref} from "vue";
-import type {IRatioOptions} from "@/directives/iratio";
+import {iRatioObject} from "fix this later";
 
-const iratioRef = ref<IRatioOptions>({
-isVisible: false,
-ratio: 0,
-exit: false,
-invert: true
+const iratio = new iRatioObject({
+  exit: false,
+  invert: true
 })
-
 </script>
-
-<style scoped>
-
-</style>
-
 ```
+
+## Configuring iratio
+
+The iRatioObject takes in 2 parameters as defined below
+
+| Name   | Type    | Description                                                                                                                      | Default value |
+|--------|---------|----------------------------------------------------------------------------------------------------------------------------------|---------------|
+| exit   | boolean | When true, the ratio ranges<br/>from 1 to -1 instead of from 1 to 0                                                              | true          |
+| invert | boolean | Normally, when fully visible, the ratio is 1,<br/> this inverts it so that it is 0.<br/>Useful for [css styling](#css-property). | true          |
+
+## Using data from iRatioObject
+
+The iRatioObject has some attributes with useful data.
+
+All are reactive using [refs](https://vuejs.org/api/reactivity-core.html#ref) (except the config attribute)
+
+| Name                          | Type          | Description                                                                            |
+|-------------------------------|---------------|----------------------------------------------------------------------------------------|
+| ratio                         | Ref\<number>  | The intersection ratio. Ranges from 0 to 1 (or 1 to -1 if [exit](#configuring-iratio)) |
+| isVisible                     | Ref\<boolean> | Whether the element is visible in the viewport.                                        |
+| [config](#configuring-iratio) | IRatioConfig  | The configuration for this iRatioObject                                                |
 
 ## CSS Property
 
@@ -50,12 +74,9 @@ This directive also provides a css property, `--iratio`,for easy styling in css.
 </template>
 
 <script lang="ts" setup>
-import {ref} from "vue";
-import type {IRatioOptions} from "@/directives/iratio";
+import {iRatioObject} from "fix this later";
 
-const iratioRef = ref<IRatioOptions>({
-  isVisible: false,
-  ratio: 0,
+const iratioRef = new iRatioObject({
   exit: true,
   invert: true
 })
@@ -70,19 +91,11 @@ div {
 </style>
 
 ```
-This property can also be used in child elements. See [Advanced Example](#Advanced-Example).
-## Attributes
-These are the following attributes / options for IRatioOptions
 
-| Name       | Type                     | Description                                                                                                                                                                                                 | Required | Default                |
-|:-----------|:-------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---------|:-----------------------|
-| ratio      | number                   | Visibility / intersection ratio of element.<br/>                                                                                                                                                            | true     | -                      |
-| isVisible  | boolean                  | Whether the element is visible.                                                                                                                                                                             | true     |                        |
-| exit       | boolean                  | Changes the ratio range from -1 to 1 instead of -1/1 to 0 (-1 to 0 during entry and 0 to 1 during exit)<br> Allows for continuous rotation when scrolling.                                                  | false    | true                   |
-| invert     | boolean                  | Whether to invert the ratio. if true, ratio is 0 when fully visible and 1/-1 when not visible. Useful for css styling                                                                                       | false    | true                   |
-| thresholds | Array\<number> OR number | The thresholds before the ratios are updated and the callbacks are called.<br/> See <a href="https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#threshold"> here </a> for more info | false    | [0.00,0.01,...,0.99,1] |
+This property can also be used in child elements. See [Advanced Example](#Advanced-Example).
 
 ## Advanced Example
+
 [Live Demo](https://stackblitz.com/edit/examples-vyue42-viratio?file=src/App.vue)
 
 <<< @/../src/views/ScrollRatioTest.vue
