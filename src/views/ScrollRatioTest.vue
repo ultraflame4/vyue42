@@ -12,10 +12,10 @@
         Ratio: {{ iratio1.ratio.value.toFixed(2) }}
       </p>
       <p>
-        Exit: {{ iratio1.exit }}
+        Exit: {{ iratio1.config.exit }}
       </p>
       <p>
-        Invert: {{ iratio1.invert }}
+        Invert: {{ iratio1.config.invert }}
       </p>
     </div>
   </div>
@@ -33,10 +33,10 @@
         Ratio: {{ iratio2.ratio.value.toFixed(2) }}
       </p>
       <p>
-        Exit: {{ iratio2.exit }}
+        Exit: {{ iratio2.config.exit }}
       </p>
       <p>
-        Invert: {{ iratio2.invert }}
+        Invert: {{ iratio2.config.invert }}
       </p>
 
     </div>
