@@ -7,7 +7,7 @@ This directive allows you to easily create scroll animations or lazy loaded reso
 To start off, we need to create an iRatioObject.
 
 ```ts
-import {iRatioObject} from "fix this later";
+import {iRatioObject} from "vyue42";
 
 const iratio = new iRatioObject({
     exit: false,
@@ -31,7 +31,7 @@ We then assign the object to the directive like so:
 </template>
 
 <script lang="ts" setup>
-import {iRatioObject} from "fix this later";
+import {iRatioObject} from "vyue42";
 
 const iratio = new iRatioObject({
   exit: false,
@@ -74,7 +74,7 @@ This directive also provides a css property, `--iratio`,for easy styling in css.
 </template>
 
 <script lang="ts" setup>
-import {iRatioObject} from "fix this later";
+import { iRatioObject } from 'vyue42';
 
 const iratioRef = new iRatioObject({
   exit: true,
