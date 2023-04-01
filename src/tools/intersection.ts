@@ -14,7 +14,10 @@ export function WatchElementStuck(target: HTMLElement, callback: (is_stuck: bool
         let val = toPx(n)
         if (val)
             return `-${val + 1}px`
-        return "100%"
+        else if (n!=='auto') {
+            return "-1px"
+        }
+        return "100%";
     }
 
     const top = formatVal(style.top)
@@ -23,23 +26,22 @@ export function WatchElementStuck(target: HTMLElement, callback: (is_stuck: bool
     const right = formatVal(style.right)
     const scrollParent = GetScrollParent(target)
 
-    console.log("parent:",scrollParent)
     const observer = new IntersectionObserver(entries => {
         let isIntersecting = entries[0].isIntersecting
-        console.log("log",entries)
+
         callback(!isIntersecting)
     }, {
         threshold: [1],
-        root: scrollParent,
+        root: scrollParent ?? undefined,
         rootMargin: `${top} ${right} ${bottom} ${left}`
     })
     observer.observe(target)
     return observer
 }
 
-const defaultThresholds:number[] = []
+const defaultThresholds: number[] = []
 for (let i = 0; i < 100; i++) {
-    defaultThresholds.push(i/100)
+    defaultThresholds.push(i / 100)
 }
 
 /**
@@ -53,18 +55,18 @@ for (let i = 0; i < 100; i++) {
  */
 export function WatchIntersectionRatio(target: HTMLElement,
                                        callback: (ratio: number, isVisible: boolean) => void,
-                                       thresholds?:number[]|number,
-                                       invert:boolean=true,
-                                       exit:boolean=true
-                                       ): IntersectionObserver {
+                                       thresholds?: number[] | number,
+                                       invert: boolean = true,
+                                       exit: boolean = true
+): IntersectionObserver {
     const observer = new IntersectionObserver(entries => {
-        let e=  entries[0]
+        let e = entries[0]
         let isNegative = (e.boundingClientRect.y < 0 && exit) ? -1 : 1
 
-        let toInvert = invert?1:0
-        callback((e.intersectionRatio-toInvert)*isNegative ,e.isIntersecting)
+        let toInvert = invert ? 1 : 0
+        callback((e.intersectionRatio - toInvert) * isNegative, e.isIntersecting)
     }, {
-        threshold: thresholds??defaultThresholds,
+        threshold: thresholds ?? defaultThresholds,
         root: GetScrollParent(target),
     })
 
