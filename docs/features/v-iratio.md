@@ -99,4 +99,3 @@ This property can also be used in child elements. See [Advanced Example](#Advanc
 
 [Live Demo](https://stackblitz.com/edit/examples-vyue42-viratio?file=src/App.vue)
 
-<<< @/../src/views/ScrollRatioTest.vue
