@@ -21,13 +21,16 @@ export function WatchElementStuck(target: HTMLElement, callback: (is_stuck: bool
     const bottom = formatVal(style.bottom)
     const left = formatVal(style.left)
     const right = formatVal(style.right)
+    const scrollParent = GetScrollParent(target)
 
+    console.log("parent:",scrollParent)
     const observer = new IntersectionObserver(entries => {
         let isIntersecting = entries[0].isIntersecting
+        console.log("log",entries)
         callback(!isIntersecting)
     }, {
         threshold: [1],
-        root: GetScrollParent(target),
+        root: scrollParent,
         rootMargin: `${top} ${right} ${bottom} ${left}`
     })
     observer.observe(target)
