@@ -1,42 +1,42 @@
 <template>
   <p v-for="i in 30">hey!</p>
 
-  <div id="container" v-iratio="iratioRef">
+  <div id="container" v-iratio="iratio1">
     <div id="test" >
       Hello World
 
       <p>
-        Visible: {{iratioRef.isVisible}}
+        Visible: {{ iratio1.isVisible }}
       </p>
       <p>
-        Ratio: {{iratioRef.ratio.toFixed(2)}}
+        Ratio: {{ iratio1.ratio.value.toFixed(2) }}
       </p>
       <p>
-        Exit: {{iratioRef.exit}}
+        Exit: {{ iratio1.exit }}
       </p>
       <p>
-        Invert: {{iratioRef.invert}}
+        Invert: {{ iratio1.invert }}
       </p>
     </div>
   </div>
 
 
 
-  <div id="container" v-iratio="iratioRef2">
+  <div id="container" v-iratio="iratio2">
     <div id="test" >
       Hello World 2
 
       <p>
-        Visible: {{iratioRef2.isVisible}}
+        Visible: {{ iratio2.isVisible }}
       </p>
       <p>
-        Ratio: {{iratioRef2.ratio.toFixed(2)}}
+        Ratio: {{ iratio2.ratio.value.toFixed(2) }}
       </p>
       <p>
-        Exit: {{iratioRef2.exit}}
+        Exit: {{ iratio2.exit }}
       </p>
       <p>
-        Invert: {{iratioRef2.invert}}
+        Invert: {{ iratio2.invert }}
       </p>
 
     </div>
@@ -48,18 +48,15 @@
 
 <script lang="ts" setup>
 import {ref} from "vue";
-import type {IRatioOptions} from "@/directives/iratio";
 
-const iratioRef = ref<IRatioOptions>({
-  isVisible: false,
-  ratio: 0,
+import {iRatioObject} from "@/directives/iratio";
+
+const iratio1 = new iRatioObject({
   exit:false,
   invert:true
 })
 
-const iratioRef2 = ref<IRatioOptions>({
-  isVisible: false,
-  ratio: 0,
+const iratio2 = new iRatioObject({
   exit:true,
   invert:false
 })

@@ -1,16 +1,9 @@
-import type {Directive} from "vue";
+import type {Directive, Ref} from "vue";
 import {WatchElementStuck, WatchIntersectionRatio} from "@/tools/intersection";
+import {ref} from "vue";
 
 
-export interface IRatioOptions{
-    /**
-     * The ratio of the element that is visble / intersected
-     */
-    ratio:number,
-    /**
-     * Whether the element was visible
-     */
-    isVisible:boolean,
+export interface IRatioConfig {
     /**
      * If true, the ratio will range from -1 to 1 instead of -1/1 to 0 (-1 to 0 during entry and 0 to 1 during exit)
      */
@@ -26,13 +19,22 @@ export interface IRatioOptions{
     thresholds?:number[]| number
 }
 
-export const iratio: Directive<HTMLElement,IRatioOptions> = (el:HTMLElement, binding) => {
-
+export const iratio: Directive<HTMLElement,iRatioObject> = (el:HTMLElement, binding) => {
     WatchIntersectionRatio(el,(ratio, isVisible) => {
-        binding.value.ratio=ratio
-        binding.value.isVisible=isVisible
+        binding.value.ratio.value=ratio
+        binding.value.isVisible.value=isVisible
         el.style.setProperty("--iratio",ratio.toString())
 
-    },binding.value.thresholds,binding.value.invert,binding.value.exit)
+    },binding.value.config.thresholds,binding.value.config.invert,binding.value.config.exit)
+
+}
+
+export class iRatioObject{
+    public config: IRatioConfig;
+    public ratio: Ref<number> = ref(0)
+    public isVisible: Ref<boolean> = ref(false)
+    constructor(config:IRatioConfig) {
+        this.config = config
+    }
 
 }
