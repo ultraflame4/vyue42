@@ -44,10 +44,11 @@ const iratio = new iRatioObject({
 
 The iRatioObject takes in 2 parameters as defined below
 
-| Name   | Type    | Description                                                                                                                      | Default value |
-|--------|---------|----------------------------------------------------------------------------------------------------------------------------------|---------------|
-| exit   | boolean | When true, the ratio ranges<br/>from 1 to -1 instead of from 1 to 0                                                              | true          |
-| invert | boolean | Normally, when fully visible, the ratio is 1,<br/> this inverts it so that it is 0.<br/>Useful for [css styling](#css-property). | true          |
+| Name       | Type                    | Description                                                                                                                                                                  | Default value |
+|------------|-------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
+| exit       | boolean                 | When true, the ratio ranges<br/>from 1 to -1 instead of from 1 to 0                                                                                                          | true          |
+| invert     | boolean                 | Normally, when fully visible, the ratio is 1,<br/> this inverts it so that it is 0.<br/>Useful for [css styling](#css-property).                                             | true          |
+| thresholds | number[] <br/>or number | The thresholds for the internal intersection observer. See [thresholds](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#threshold) for more info. |               |
 
 ## Using data from iRatioObject
 
@@ -74,7 +75,7 @@ This directive also provides a css property, `--iratio`,for easy styling in css.
 </template>
 
 <script lang="ts" setup>
-import { iRatioObject } from 'vyue42';
+import {iRatioObject} from 'vyue42';
 
 const iratioRef = new iRatioObject({
   exit: true,
