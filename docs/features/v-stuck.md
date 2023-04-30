@@ -26,6 +26,17 @@ The element it is attached to needs to be already sticky.
 
 See the [example](#example) for more details.
 
+::: warning
+Try not to use `top:0` as it does not work in some cases.
+
+Regardless if `top:0` does not work use `top:-1px` instead!
+
+**For example:**<br/>
+If **element** v-stuck is attached to is the first element in the scrolling context,<br/>
+the css top must be set to `top: -1px` or else the element does not work.
+:::
+
+
 ## Using with refs
 You can also pass in a ref into the v-stuck to get see if the target element is stuck / stickied.
 
