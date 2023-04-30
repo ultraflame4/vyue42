@@ -1,12 +1,14 @@
 <template>
     <div class="container">
+
+        <div class="AmIStickied" id="stuck0" v-stuck="topStickied">
+            Am I Stickied? (Top -1) {{ topStickied }}
+        </div>
         <h1>Hello world!</h1>
 
         <p v-for="i in 30">hey!</p>
-        <div class="AmIStickied" id="stuck0" v-stuck="topStickied">
-            Am I Stickied? (Top 0) {{ topStickied }}
-        </div>
-        <div class="AmIStickied" id="stuck1" v-stuck="topStickied">
+
+        <div class="AmIStickied" id="stuck1" v-stuck="topStickied2">
             Am I Stickied? (Top 5rem) {{ topStickied }}
         </div>
         <p v-for="i in 30">hey2!</p>
@@ -22,6 +24,8 @@
 import {ref} from "vue";
 
 const topStickied = ref({stuck: false})
+const topStickied2 = ref({stuck: false})
+const topStickied3 = ref({stuck: false})
 
 </script>
 
@@ -34,7 +38,7 @@ const topStickied = ref({stuck: false})
   min-height: 0;
 }
 #stuck0 {
-    top: 0;
+    top: -1px;
 }
 
 #stuck1 {
