@@ -5,15 +5,16 @@ import {GetScrollParent} from "@/tools";
  * Watches a target element and calls the callback every time the element is stuck / unstuck when on position sticky
  * @param target The element to target.
  * @param callback The callback that is called.
- * @return The intersection observer used to watch the element
+ * @return The intersection observer used to watch the element. Please disconnect the observer when the element is updated.
  */
 export function WatchElementStuck(target: HTMLElement, callback: (is_stuck: boolean) => void): IntersectionObserver {
     const style = window.getComputedStyle(target)
 
+
     function formatVal(n: string) {
         let val = toPx(n)
         if (val)
-            return `-${val + 1}px`
+            return `-${val+1}px`
         else if (n!=='auto') {
             return "-1px"
         }
@@ -25,10 +26,8 @@ export function WatchElementStuck(target: HTMLElement, callback: (is_stuck: bool
     const left = formatVal(style.left)
     const right = formatVal(style.right)
     const scrollParent = GetScrollParent(target)
-
     const observer = new IntersectionObserver(entries => {
         let isIntersecting = entries[0].isIntersecting
-
         callback(!isIntersecting)
     }, {
         threshold: [1],

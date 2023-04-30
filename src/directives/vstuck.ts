@@ -3,11 +3,16 @@ import toPx from "to-px";
 import {GetScrollParent} from "@/tools";
 import {WatchElementStuck} from "@/tools/intersection";
 
-export const vstuck: Directive<HTMLElement,{stuck:boolean}> = (el:HTMLElement, binding) => {
+export const vstuck: Directive<HTMLElement, { stuck: boolean }> =
+    (el: HTMLElement, binding, vnode, prevVNode) => {
+        if (prevVNode?.observer) {
+            prevVNode?.observer.disconnect()
+        }
 
-    WatchElementStuck(el, is_stuck => {
-        el.toggleAttribute("stuck",is_stuck);
-        binding.value.stuck=is_stuck
-    })
+        // @ts-ignore
+        vnode.observer = WatchElementStuck(el, is_stuck => {
+            el.toggleAttribute("stuck", is_stuck);
+            binding.value.stuck = is_stuck
+        })
 
-}
+    }
