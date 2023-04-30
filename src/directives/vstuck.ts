@@ -12,7 +12,9 @@ export const vstuck: Directive<HTMLElement, { stuck: boolean }> =
         // @ts-ignore
         vnode.observer = WatchElementStuck(el, is_stuck => {
             el.toggleAttribute("stuck", is_stuck);
-            binding.value.stuck = is_stuck
+            if (binding.value) {
+                binding.value.stuck = is_stuck
+            }
         })
 
     }
