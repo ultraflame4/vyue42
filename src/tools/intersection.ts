@@ -13,8 +13,8 @@ export function WatchElementStuck(target: HTMLElement, callback: (is_stuck: bool
 
     function formatVal(n: string) {
         let val = toPx(n)
-        if (val)
-            return `-${val+1}px`
+        if (val !== null)
+            return `${-(val+1)}px`
         else if (n!=='auto') {
             return "-1px"
         }
@@ -25,12 +25,13 @@ export function WatchElementStuck(target: HTMLElement, callback: (is_stuck: bool
     const bottom = formatVal(style.bottom)
     const left = formatVal(style.left)
     const right = formatVal(style.right)
+    console.log(`BOX ${top} ${right} ${bottom} ${left}`)
     const scrollParent = GetScrollParent(target)
     const observer = new IntersectionObserver(entries => {
         let isIntersecting = entries[0].isIntersecting
         callback(!isIntersecting)
     }, {
-        threshold: [1],
+        threshold: 1,
         root: scrollParent ?? undefined,
         rootMargin: `${top} ${right} ${bottom} ${left}`
     })
