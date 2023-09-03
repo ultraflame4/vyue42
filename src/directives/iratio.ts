@@ -38,3 +38,4 @@ export class iRatioObject{
     }
 
 }
+export class IRatioObject extends iRatioObject{}
