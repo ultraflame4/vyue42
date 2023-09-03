@@ -1,6 +1,5 @@
 <template>
     <div class="container">
-
         <div class="AmIStickied" id="stuck0" v-stuck="topStickied">
             Am I Stickied? (Top -1) {{ topStickied }}
         </div>

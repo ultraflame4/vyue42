@@ -1,4 +1,4 @@
-import type {Directive, Ref} from "vue";
+ import type {Directive, Ref} from "vue";
 import toPx from "to-px";
 import {GetScrollParent} from "@/tools";
 import {WatchElementStuck} from "@/tools/intersection";
